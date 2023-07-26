@@ -224,6 +224,10 @@ img {
   background-color: #303f9f;
 }
 
+.Button:disabled {
+  display: none;
+}
+
 .loader {
   position: fixed;
   top: 0;

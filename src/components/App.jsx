@@ -29,6 +29,7 @@ export const App = () => {
         setMaxPages(imgMaxPages);
         const newImages = [...images, ...hits];
         setImages(newImages);
+        setIsError(false);
       } catch (err) {
         console.log(err);
         setIsError(true);
@@ -36,7 +37,10 @@ export const App = () => {
         setIsLoading(false);
       }
     };
-    fetchData();
+    if (filter) {
+      fetchData();
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, pageNum]);
 
